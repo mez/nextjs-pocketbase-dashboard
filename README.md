@@ -14,3 +14,7 @@ Just follow along with the course and then reference this repo for the database 
 
 Check out the `/pb-seed` and you'll find the collections schema I exported. Including a backup of the database. You can just use these
 to seed your database!
+
+### If you find an issue or have a suggestion for better coding practice!?!?
+
+Please create an issue here so that we can all learn!
