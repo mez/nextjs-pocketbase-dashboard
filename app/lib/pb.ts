@@ -3,8 +3,11 @@ import Pocketbase from 'pocketbase';
 import { NextRequest } from 'next/server'
 import { cookies } from 'next/headers';
 
+
+const PB_URL = 'http://127.0.0.1:8090';
+
 export async function initPocketbaseFromCookie() {
-  const pb = new Pocketbase('http://127.0.0.1:8090');
+  const pb = new Pocketbase(PB_URL);
 
   // load state from cookie, won't refresh auth, middleware handles that.
   pb.authStore.loadFromCookie(cookies().get('pb_auth')?.value  || '');
@@ -13,7 +16,7 @@ export async function initPocketbaseFromCookie() {
 }
 
 export async function initPocketBaseFromRequest(request: NextRequest) {
-  const pb = new Pocketbase('http://127.0.0.1:8090');
+  const pb = new Pocketbase(PB_URL);
 
   // load the store data from the request cookie string
   pb.authStore.loadFromCookie(request?.cookies.get('pb_auth')?.value || '');
